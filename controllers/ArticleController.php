@@ -1,43 +1,25 @@
 <?php
 require_once 'config/db.php';
-require_once 'models/User.php';
+require_once 'models/Article.php';
 
-function showRegister() {
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        if (registerUser($name, $email, $password)) {
-            header("Location: index.php?page=login&success=1");
-            exit;
-        } else {
-            $error = "Registration failed. Email may already exist.";
-        }
-    }
-    require 'views/auth/register.php';
+function showHomepage() {
+    $categories = getAllCategories();
+    $articles = getAllArticles();
+    require 'views/articles/index.php';
 }
 
-function showLogin() {
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $user = loginUser($email, $password);
-        if ($user) {
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['user_name'] = $user['name'];
-            $_SESSION['user_role'] = $user['role'];
-            header("Location: index.php?page=home");
-            exit;
-        } else {
-            $error = "Invalid email or password.";
-        }
+function showArticle() {
+    $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+    $article = getArticleById($id);
+    if (!$article) {
+        echo "Article not found.";
+        return;
     }
-    require 'views/auth/login.php';
-}
-
-function logout() {
-    session_destroy();
-    header("Location: index.php?page=login");
-    exit;
+    incrementViewCount($id);
+    $like_count = getLikeCount($id);
+    $is_liked = isset($_SESSION['user_id']) ? isLikedByUser($id, $_SESSION['user_id']) : false;
+    require_once 'models/Comment.php';
+    $comments = getCommentsByArticle($id);
+    require 'views/articles/show.php';
 }
 ?>
