@@ -1,4 +1,5 @@
 <?php
+// Git update: Added documentation comment for ArticleModel
 require_once __DIR__ . '/../config/database.php';
 
 class ArticleModel {
