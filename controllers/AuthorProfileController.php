@@ -5,7 +5,7 @@ require_once __DIR__ . '/../models/UserModel.php';
 
 class AuthorProfileController {
     private $userModel;
-
+ 
     public function __construct() {
         requireAuthor();
         $this->userModel = new UserModel();
