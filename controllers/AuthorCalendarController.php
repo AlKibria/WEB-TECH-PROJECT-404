@@ -17,3 +17,4 @@ class AuthorCalendarController {
         require __DIR__ . '/../views/calendar/index.php';
     }
 }
+  
