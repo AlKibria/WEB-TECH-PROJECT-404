@@ -11,7 +11,7 @@ class AuthorCommentController {
         requireAuthor();
         $this->commentModel = new CommentModel();
         $this->articleModel = new ArticleModel();
-    }
+    }  
 
     public function index() {
         $author_id = $_SESSION['user_id'];
