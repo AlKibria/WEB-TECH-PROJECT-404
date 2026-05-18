@@ -8,7 +8,7 @@ class ArticleModel {
     public function __construct() {
         $this->db = getDB();
     }
-
+ 
     public function getByAuthor($author_id, $status = null) {
         if ($status && $status !== 'all') {
             $stmt = $this->db->prepare("
