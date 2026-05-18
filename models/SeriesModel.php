@@ -3,7 +3,7 @@ require_once __DIR__ . '/../config/database.php';
 
 class SeriesModel {
     private $db;
-
+ 
     public function __construct() {
         $this->db = getDB();
     }
