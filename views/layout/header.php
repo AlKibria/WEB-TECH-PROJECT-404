@@ -13,6 +13,7 @@
         <div class="ms-auto">
             <?php if (isset($_SESSION['user_id'])): ?>
                 <span class="text-light me-3">Welcome, <?= htmlspecialchars($_SESSION['user_name']) ?></span>
+                <a href="index.php?page=reading_list" class="btn btn-outline-light btn-sm me-2">📚 Reading List</a>
                 <a href="index.php?page=logout" class="btn btn-outline-light btn-sm">Logout</a>
             <?php else: ?>
                 <a href="index.php?page=login" class="btn btn-outline-light btn-sm me-2">Login</a>

@@ -27,6 +27,18 @@
             </div>
         </div>
 
+        <!-- Save to Reading List -->
+<?php if (isset($_SESSION['user_id'])): ?>
+    <?php
+    require_once 'models/ReadingList.php';
+    $is_saved = isArticleSaved($_SESSION['user_id'], $article['id']);
+    ?>
+    <a href="index.php?page=save_article&article_id=<?= $article['id'] ?>" 
+        class="btn <?= $is_saved ? 'btn-success' : 'btn-outline-success' ?> ms-2">
+        <?= $is_saved ? '✅ Saved' : '🔖 Save Article' ?>
+    </a>
+<?php endif; ?>
+
         <!-- Comments -->
         <div class="card mb-4">
             <div class="card-body">

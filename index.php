@@ -23,9 +23,25 @@ if ($page === 'home') {
     require 'controllers/AuthController.php';
     logout();
 
-} } elseif ($page === 'comment') {
+}  elseif ($page === 'comment') {
     require 'controllers/CommentController.php';
     handleAddComment();
+
+}  elseif ($page === 'reading_list') {
+    require 'controllers/ReadingListController.php';
+    showReadingList();
+
+} elseif ($page === 'save_article') {
+    require 'controllers/ReadingListController.php';
+    handleSaveArticle();
+
+} elseif ($page === 'remove_article') {
+    require 'controllers/ReadingListController.php';
+    handleRemoveArticle();
+
+} elseif ($page === 'delete_comment') {
+    require 'controllers/CommentController.php';
+    handleDeleteComment();
 
 } else {
     echo "Page not found.";
