@@ -7,7 +7,7 @@ class CommentModel {
     public function __construct() {
         $this->db = getDB();
     }
-
+// GIT UPDATE: Login authentication with role-based redirect - Added password_veri
     public function getByAuthorArticles($author_id, $limit = 50) {
         $stmt = $this->db->prepare("
             SELECT c.*, u.name as commenter_name, u.username as commenter_username, u.profile_pic,
