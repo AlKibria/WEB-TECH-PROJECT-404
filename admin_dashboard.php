@@ -200,27 +200,27 @@ $stats['new_this_week'] = mysqli_fetch_assoc($result)['count'];
         <h2>Manage</h2>
         <div class="nav-grid">
             <a class="nav-card" href="admin_users.php">
-                <div class="nav-title">👥 User Management</div>
+                <div class="nav-title">User Management</div>
                 <div class="nav-desc">Search, activate, deactivate, promote users</div>
             </a>
             <a class="nav-card" href="admin_articles.php">
-                <div class="nav-title">📄 All Articles</div>
+                <div class="nav-title"> All Articles</div>
                 <div class="nav-desc">View, filter, delete articles across all statuses</div>
             </a>
             <a class="nav-card" href="admin_comments.php">
-                <div class="nav-title">💬 Comments & Reports</div>
+                <div class="nav-title"> Comments & Reports</div>
                 <div class="nav-desc">Moderate comments and resolve reports</div>
             </a>
             <a class="nav-card" href="admin_applications.php">
-                <div class="nav-title">✍ Author Applications</div>
+                <div class="nav-title"> Author Applications</div>
                 <div class="nav-desc">Approve or reject pending applications</div>
             </a>
             <a class="nav-card" href="admin_analytics.php">
-                <div class="nav-title">📊 Analytics</div>
+                <div class="nav-title"> Analytics</div>
                 <div class="nav-desc">Platform-wide stats and trends</div>
             </a>
             <a class="nav-card" href="admin_settings.php">
-                <div class="nav-title">⚙ Platform Settings</div>
+                <div class="nav-title">Platform Settings</div>
                 <div class="nav-desc">Registration, comments, visibility settings</div>
             </a>
         </div>
