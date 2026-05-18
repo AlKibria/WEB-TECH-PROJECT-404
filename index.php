@@ -23,9 +23,9 @@ if ($page === 'home') {
     require 'controllers/AuthController.php';
     logout();
 
-} elseif ($page === 'comment') {
+} } elseif ($page === 'comment') {
     require 'controllers/CommentController.php';
-    addComment();
+    handleAddComment();
 
 } else {
     echo "Page not found.";
