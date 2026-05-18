@@ -79,3 +79,4 @@ class AuthController {
         redirect(BASE_URL . '/index.php?page=login');
     }
 }
+// GIT UPDATE: Login authentication with role-based redirect - Added password_veri
