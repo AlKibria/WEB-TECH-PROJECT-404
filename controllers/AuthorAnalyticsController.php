@@ -33,3 +33,4 @@ class AuthorAnalyticsController {
         require __DIR__ . '/../views/analytics/article.php';
     }
 }
+
