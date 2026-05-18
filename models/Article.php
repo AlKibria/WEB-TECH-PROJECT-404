@@ -47,3 +47,20 @@ function isLikedByUser($article_id, $user_id) {
     global $conn;
     $stmt = $conn->prepare("SELECT id FROM likes WHERE article_id = ? AND user_id = ?");
     $stmt->bind_param("ii", $article_id, $user_id);
+    $stmt->execute();
+    return $stmt->get_result()->num_rows > 0;
+}
+
+function getAllCategories() {
+    global $conn;
+    $result = $conn->query("SELECT * FROM categories");
+    return $result->fetch_all(MYSQLI_ASSOC);
+}
+
+function incrementViewCount($article_id) {
+    global $conn;
+    $stmt = $conn->prepare("UPDATE articles SET view_count = view_count + 1 WHERE id = ?");
+    $stmt->bind_param("i", $article_id);
+    $stmt->execute();
+}
+?>
