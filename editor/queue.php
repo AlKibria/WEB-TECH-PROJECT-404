@@ -48,6 +48,7 @@ $result = mysqli_query($conn, $sql);
 <html>
 <head>
 <title>Article Queue</title>
+<p style="color:#888">Total Pending: <?php echo mysqli_num_rows($result); ?></p>
 <style>
 body{
 font-family: arial;
