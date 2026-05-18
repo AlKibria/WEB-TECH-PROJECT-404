@@ -3,7 +3,7 @@ require_once __DIR__ . '/../config/database.php';
 
 class CommentModel {
     private $db;
-
+ 
     public function __construct() {
         $this->db = getDB();
     }
